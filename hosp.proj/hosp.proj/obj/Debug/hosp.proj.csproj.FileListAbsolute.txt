@@ -1,0 +1,7 @@
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\bin\Debug\hosp.proj.exe.config
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\bin\Debug\hosp.proj.exe
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\bin\Debug\hosp.proj.pdb
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\obj\Debug\hosp.proj.csproj.AssemblyReference.cache
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\obj\Debug\hosp.proj.csproj.CoreCompileInputs.cache
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\obj\Debug\hosp.proj.exe
+C:\Users\lab3132\Desktop\hosp.proj\hosp.proj\hosp.proj\obj\Debug\hosp.proj.pdb
