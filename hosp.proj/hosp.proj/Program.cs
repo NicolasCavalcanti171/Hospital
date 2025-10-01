@@ -11,11 +11,15 @@ namespace hosp.proj.projetohosp
         public string Nome;
         public bool EPreferencial;
     }
+    //Define um tipo chamado Paciente.
+    //Ele tem dois campos públicos:Nome: guarda o nome do paciente.EPreferencial: indica se o paciente tem prioridade na fila (true ou false).
 
     class Program
     {
         static Paciente[] fila = new Paciente[15];
         static int numeroDePacientes = 0;
+        //fila: cria um array estático com capacidade para até 15 pacientes.
+        //numeroDePacientes: controla quantos pacientes estão na fila atualmente.
 
         static void Main(string[] args)
         {
@@ -59,6 +63,8 @@ namespace hosp.proj.projetohosp
                 }
 
             } while (opcao != "0");
+            //Executa um loop até que o usuário escolha "0".
+            //A cada iteração, chama uma função conforme a opção escolhida.
         }
 
         static void CadastrarPaciente()
@@ -81,6 +87,10 @@ namespace hosp.proj.projetohosp
             Console.Write("O paciente é preferencial? (s/n): ");
             char pref = Console.ReadLine().Trim().ToLower()[0];
             novoPaciente.EPreferencial = (pref == 's');
+            //Verifica se a fila está cheia; se sim, sai da função.
+            //Cria um novo Paciente.
+            //Recebe o nome e lê se é preferencial.
+            //Armazena essas informações em novoPaciente.
 
             if (novoPaciente.EPreferencial)
             {
@@ -97,12 +107,18 @@ namespace hosp.proj.projetohosp
 
                 fila[pontoDeInsercao] = novoPaciente;
             }
+            //Se o paciente for preferencial:
+            //Encontra o primeiro índice onde há paciente não preferencial (ou o final da fila).
+            //Move todos os pacientes após esse ponto para a direita, abrindo espaço.
+            //Insere o novo paciente nesse ponto.
             else
             {
                 fila[numeroDePacientes] = novoPaciente;
             }
+            //Se não for preferencial, adiciona o paciente no final da fila.
 
             numeroDePacientes++;
+            //Atualiza o número de pacientes na fila.
             Console.WriteLine("\nPaciente cadastrado com sucesso!");
             Console.ReadKey();
         }
@@ -123,6 +139,9 @@ namespace hosp.proj.projetohosp
                     string status = fila[i].EPreferencial ? "[PREFERENCIAL]" : "[COMUM]";
                     Console.WriteLine($"{i + 1}. {fila[i].Nome} - {status}");
                 }
+                //Percorre a fila até o número de pacientes atual.
+                //Para cada paciente, define uma string de status conforme preferência.
+                //Exibe as informações do paciente.
             }
 
             Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
@@ -146,6 +165,10 @@ namespace hosp.proj.projetohosp
                 {
                     fila[i] = fila[i + 1];
                 }
+                //Se não houver pacientes, sai.
+                //Caso contrário, remove o paciente na frente da fila (fila[0]).
+                //Move todos os pacientes seguintes para a esquerda (deixa o espaço no final).
+                //Decrementa o número de pacientes.
 
                 numeroDePacientes--;
                 Console.WriteLine("\nPaciente atendido com sucesso!");
@@ -213,6 +236,13 @@ namespace hosp.proj.projetohosp
                 }
 
                 numeroDePacientes++;
+                //Verifica se a fila está vazia; se sim, sai.
+                //Lista pacientes para o usuário escolher qual alterar.
+                //Recebe o número do paciente a alterar e verifica validade.
+                //Remove o paciente da fila (faz shift para esquerda).
+                //Atualiza os dados do paciente.
+                //Insere novamente o paciente, considerando prioridade.
+                //Atualiza o contador.
 
                 Console.WriteLine("\nDados alterados e fila reorganizada com sucesso!");
             }
