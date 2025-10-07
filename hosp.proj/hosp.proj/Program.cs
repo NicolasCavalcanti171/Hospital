@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace hosp.proj.projetohosp
 {
     public struct Paciente
+    //Tipo de dados para agrupar informações de um paciente.
+
     {
         public string Nome;
         public bool EPreferencial;
@@ -38,6 +40,7 @@ namespace hosp.proj.projetohosp
                 Console.Write("\nDigite a opção desejada: ");
 
                 opcao = Console.ReadLine().Trim().ToLower();
+                //identifica se a tecla é minúscula.
 
                 switch (opcao)
                 {
