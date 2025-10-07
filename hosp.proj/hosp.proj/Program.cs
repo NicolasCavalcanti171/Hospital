@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace hosp.proj.projetohosp
 {
     public struct Paciente
-    //Tipo de dados para agrupar informações de um paciente.
+    //(struct)é tipo de dados para agrupar informações de um paciente.
 
     {
         public string Nome;
