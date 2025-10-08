@@ -40,7 +40,7 @@ namespace hosp.proj.projetohosp
                 Console.Write("\nDigite a opção desejada: ");
 
                 opcao = Console.ReadLine().Trim().ToLower();
-                //identifica se a tecla é minúscula.
+                // remove espaços em branco extras, converte tudo para minúsculas e armazena o resultado na variável opcao.
 
                 switch (opcao)
                 {
@@ -62,6 +62,7 @@ namespace hosp.proj.projetohosp
                     default:
                         Console.WriteLine("\nOpção inválida! Pressione qualquer tecla para continuar...");
                         Console.ReadKey();
+                        //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
                         break;
                 }
 
@@ -89,9 +90,12 @@ namespace hosp.proj.projetohosp
 
             Console.Write("Digite o nome do paciente: ");
             novoPaciente.Nome = Console.ReadLine().Trim();
+            //remove os espaços extras nas bordas e atribui esse valor à propriedade Nome do objeto novoPaciente. 
 
             Console.Write("O paciente é preferencial? (s/n): ");
             char pref = Console.ReadLine().Trim().ToLower()[0];
+            // remove espaços em branco, converte para minúsculas e pega o primeiro caractere, guardando-o na variável pref. 
+
             novoPaciente.EPreferencial = (pref == 's');
             //Verifica se a fila está cheia; se sim, sai da função.
             //Cria um novo Paciente.
@@ -127,6 +131,7 @@ namespace hosp.proj.projetohosp
             //Atualiza o número de pacientes na fila.
             Console.WriteLine("\nPaciente cadastrado com sucesso!");
             Console.ReadKey();
+            //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
         }
 
         static void ListarPacientes()
@@ -154,6 +159,7 @@ namespace hosp.proj.projetohosp
 
             Console.WriteLine("\nPressione qualquer tecla para voltar ao menu...");
             Console.ReadKey();
+            //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
         }
 
         static void AtenderPaciente()
@@ -185,6 +191,7 @@ namespace hosp.proj.projetohosp
 
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey();
+            //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
         }
 
         static void AlterarPaciente()
@@ -197,6 +204,7 @@ namespace hosp.proj.projetohosp
             {
                 Console.WriteLine("A fila está vazia. Não há dados para alterar.");
                 Console.ReadKey();
+                //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
                 return;
             }
 
@@ -212,9 +220,11 @@ namespace hosp.proj.projetohosp
 
                 Console.Write($"Digite o novo nome para '{pacienteParaAlterar.Nome}': ");
                 string novoNome = Console.ReadLine().Trim();
+                //remove os espaços extras nas bordas e guarda o resultado na variável novoNome.
 
                 Console.Write("O paciente é preferencial? (s/n): ");
                 bool novoStatus = Console.ReadLine().Trim().ToLower()[0] == 's';
+                // define novoStatus como true se o usuário digitar algo que comece com 's', e false caso contrário.
 
                 for (int i = indice; i < numeroDePacientes - 1; i++)
                 {
@@ -232,6 +242,7 @@ namespace hosp.proj.projetohosp
                     {
                         pontoDeInsercao++;
                     }
+                    //move o ponto de inserção para a frente da fila, passando por todos os pacientes preferenciais. 
 
                     for (int i = numeroDePacientes; i > pontoDeInsercao; i--)
                     {
@@ -240,10 +251,13 @@ namespace hosp.proj.projetohosp
 
                     fila[pontoDeInsercao] = pacienteParaAlterar;
                 }
+                // move todos os pacientes da fila para abrir espaço para um novo paciente.
+                //que é então inserido na posição correta determinada anteriormente.
                 else
                 {
                     fila[numeroDePacientes] = pacienteParaAlterar;
                 }
+                //insere um paciente no final da fila, caso não haja uma condição específica que exija uma inserção em outra posição. 
 
                 numeroDePacientes++;
                 //Verifica se a fila está vazia; se sim, sai.
@@ -263,6 +277,7 @@ namespace hosp.proj.projetohosp
 
             Console.WriteLine("\nPressione qualquer tecla para continuar...");
             Console.ReadKey();
+            //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
         }
     }
 }
