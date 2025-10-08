@@ -47,23 +47,35 @@ namespace hosp.proj.projetohosp
                     case "1":
                         CadastrarPaciente();
                         break;
+                    // interrompe imediatamente a execução de um loop ou switch, saindo do bloco de código.
+
                     case "2":
                         ListarPacientes();
                         break;
+                    // interrompe imediatamente a execução de um loop ou switch, saindo do bloco de código.
+
                     case "3":
                         AtenderPaciente();
                         break;
+                    // interrompe imediatamente a execução de um loop ou switch, saindo do bloco de código.
+
                     case "4":
                         AlterarPaciente();
                         break;
+                    // interrompe imediatamente a execução de um loop ou switch, saindo do bloco de código.
+
                     case "0":
                         Console.WriteLine("\nSaindo do sistema. Obrigado!");
                         break;
+                    // interrompe imediatamente a execução de um loop ou switch, saindo do bloco de código.
+
                     default:
                         Console.WriteLine("\nOpção inválida! Pressione qualquer tecla para continuar...");
                         Console.ReadKey();
                         //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
                         break;
+                        // interrompe imediatamente a execução de um loop ou switch, saindo do bloco de código.
+
                 }
 
             } while (opcao != "0");
@@ -215,6 +227,8 @@ namespace hosp.proj.projetohosp
                 numeroEscolhido > 0 &&
                 numeroEscolhido <= numeroDePacientes)
             {
+                // se o texto for um número inteiro válido, maior que zero e não superior ao número total de pacientes.
+                // o código dentro do bloco if será executado. 
                 int indice = numeroEscolhido - 1;
                 Paciente pacienteParaAlterar = fila[indice];
 
@@ -231,6 +245,8 @@ namespace hosp.proj.projetohosp
                     fila[i] = fila[i + 1];
                 }
                 numeroDePacientes--;
+                //remove um item de uma fila.
+                //deslocando os itens seguintes para preencher o espaço vazio e depois decrementando o contador de pacientes. 
 
                 pacienteParaAlterar.Nome = novoNome;
                 pacienteParaAlterar.EPreferencial = novoStatus;
