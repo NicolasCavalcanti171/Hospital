@@ -210,6 +210,7 @@ namespace hosp.proj.projetohosp
         // método para cadastrar um paciente, sem retorno e sem precisar de um objeto da classe.
         {
             Console.Clear();
+            //método que apaga todo o texto ou as mensagens exibidas na tela de um console ou terminal. 
             Console.WriteLine("--- Alterar Dados Cadastrais ---");
 
             if (numeroDePacientes == 0)
