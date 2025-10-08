@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,14 +71,17 @@ namespace hosp.proj.projetohosp
         }
 
         static void CadastrarPaciente()
+        // método para cadastrar um paciente, sem retorno e sem precisar de um objeto da classe.
         {
             Console.Clear();
+            //método que apaga todo o texto ou as mensagens exibidas na tela de um console ou terminal. 
             Console.WriteLine("--- Cadastro de Novo Paciente ---");
 
             if (numeroDePacientes >= 15)
             {
                 Console.WriteLine("A fila está cheia! Não é possível cadastrar mais pacientes.");
                 Console.ReadKey();
+                //método que pausa a execução do programa e espera que o usuário pressione uma única tecla para continuar.
                 return;
             }
 
@@ -127,6 +130,7 @@ namespace hosp.proj.projetohosp
         }
 
         static void ListarPacientes()
+        // método para cadastrar um paciente, sem retorno e sem precisar de um objeto da classe.
         {
             Console.Clear();
             Console.WriteLine("--- Pacientes na Fila ---");
@@ -141,6 +145,7 @@ namespace hosp.proj.projetohosp
                 {
                     string status = fila[i].EPreferencial ? "[PREFERENCIAL]" : "[COMUM]";
                     Console.WriteLine($"{i + 1}. {fila[i].Nome} - {status}");
+                    // exibe no console, um número sequencial, o nome de um objeto da lista fila e um status.
                 }
                 //Percorre a fila até o número de pacientes atual.
                 //Para cada paciente, define uma string de status conforme preferência.
@@ -152,6 +157,7 @@ namespace hosp.proj.projetohosp
         }
 
         static void AtenderPaciente()
+        // método para cadastrar um paciente, sem retorno e sem precisar de um objeto da classe.
         {
             Console.Clear();
             Console.WriteLine("--- Atendimento de Paciente ---");
@@ -182,6 +188,7 @@ namespace hosp.proj.projetohosp
         }
 
         static void AlterarPaciente()
+        // método para cadastrar um paciente, sem retorno e sem precisar de um objeto da classe.
         {
             Console.Clear();
             Console.WriteLine("--- Alterar Dados Cadastrais ---");
